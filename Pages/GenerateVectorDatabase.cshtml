@@ -1,0 +1,49 @@
+﻿@page
+
+@model GenerateVectorDatabaseModel
+
+<div class="row my-5">
+
+    <h1>Generate Vector Database</h1>
+
+    @if (null != Model.Message)
+    {
+        <p class="text-info">
+            @Model.Message
+        </p>
+    }
+
+    <p>
+        <a class="text-decoration-none" asp-page="Index">&larr; back</a>
+    </p>
+
+    <p>
+        The vector database is ALREADY created in Database &gt; Vectors directory. No action is needed on your part.
+    </p>
+
+    <p>
+        You can however re-generate, because regeneration is an UPSERT action.
+    </p>
+
+    <p>
+        Click the link below to start the process. This process initiates the generation of your vector database.
+        It begins by reading the "quotes.json" file, which is supposed to contain extensive text data. The process then transforms this textual information into numerical vectors – a critical step that allows for highly efficient search capabilities.
+    </p>
+
+    <p>
+        The vectorization leads to creation of a sqlite database file called 'db_vectors.sqlite'. This file
+        is in the folder Database &gt; Vectors.
+    </p>
+
+    <p class="fst-italic">
+        Note: Vectorization of large data files may fail because there are per-minute limits
+        on requests to remote LLMs. So we have restricted the quotes to 15.
+        For larger data and PDF files it's better to use local LLMs like llama or a specialized service like Azure.
+    </p>
+
+
+    <a class="text-decoration-none" onclick="javascript:this.style.pointerEvents='none'; this.style.color='gray';" asp-page-handler="GenerateVectorDatabase">Click to Generate Vector Database</a>
+
+
+</div>
+

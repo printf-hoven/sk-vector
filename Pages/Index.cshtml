@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+
+<div class="row my-3">
+
+    <h1>Get Quotes</h1>
+
+    <p>
+        Generate or Update vector database here &rarr; <a class="text-decoration-none" asp-page="GenerateVectorDatabase">Generate Vector Database</a>
+    </p>
+
+</div>
+
+<div class="row my-3">
+
+    <p>Enter a few words of a quote to get a matching quote by a famous person. Only 15 quotes have been vectorized [see 'quotes.json' file adjacent to 'program.cs' file in the solution explorer].</p>
+
+    <p>
+        Try 'sky', 'life', 'books', etc.,
+    </p>
+
+    <partial name="_InputForm" model="Model.Input" />
+
+</div>
+
+@if (null != Model.Quotes)
+{
+    <div class="row my-3">
+
+        <h2 class="mb-3">Top 3 matching Quotes</h2>
+
+        <section>
+
+            <p>Smaller the score, more close the searched quote. Score less than 0.4 is quite close.</p>
+
+            <ol>
+                @foreach (string quote in Model.Quotes)
+                {
+                    <li>
+
+                        <p>@quote</p>
+
+                    </li>
+                }
+            </ol>
+
+        </section>
+
+    </div>
+}
+

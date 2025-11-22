@@ -1,0 +1,21 @@
+﻿@model InputModel
+
+<form method="post" class="row g-3" onsubmit="javascript: event.preventDefault();document.getElementById('btn_submit').disabled=true;this.submit();">
+
+  <div class="col">
+
+    <input asp-for="Name" value="@Model.Name" class="form-control" autocomplete="off" />
+
+    <span class="text-danger" asp-validation-for="Name"></span>
+
+  </div>
+
+  <div class="col">
+
+    <input asp-for="ChatHistory" value="@Model.ChatHistory" class="form-control" />
+
+    <button type="submit" class="btn btn-primary" id="btn_submit">Send</button>
+
+  </div>
+
+</form>
