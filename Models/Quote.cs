@@ -61,7 +61,7 @@ public class QuotesByGreatAuthorsVector
 
         foreach (var quote in ls)
         {
-            QuotesByGreatAuthorsVector vec = new() { Author = quote.Author, Quote = $"{quote.Quote}", Id = id++ };
+            QuotesByGreatAuthorsVector vec = new() { Author = quote.Author, Quote = quote.Quote, Id = id++ };
 
             vec.DefinitionEmbedding = (await _generator.GenerateAsync(vec.Quote)).Vector;
 
@@ -71,5 +71,6 @@ public class QuotesByGreatAuthorsVector
         await collection.UpsertAsync(list);
     }
 }
+
 
 
