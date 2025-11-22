@@ -1,5 +1,6 @@
-# sk-vector
-Vector Search with Semantic Kernel C# - Sample Example Program ASPNET Core
+# Detailed explanation ↓
+[Vector Search with Semantic Kernel C# - Sample Example Program ASPNET Core](https://hoven.in/aspnet-core/sk-vector-search.html)
+
 
 # Get Gemini Keys as here->
 
